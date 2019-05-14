@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import com.cagam.utils.SysConstants;;
 
 // Reentrant In JVM
 public class ZkCuratorReentrantLock implements DistributedLock {
     private static final Logger logger = LoggerFactory.getLogger(ZkCuratorReentrantLock.class);
-    public static final String ROOT_PATH = "/ROOT_LOCK/"; // Zk锁根目录
     private static final long delayTimeForClean = 1000; // 延迟清理时间
     private static final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(5);
 
@@ -28,7 +28,7 @@ public class ZkCuratorReentrantLock implements DistributedLock {
             throw new IllegalArgumentException("client and lockPath are not null...");
 
         this.client = client;
-        this.lockPath = ROOT_PATH + lockPath;
+        this.lockPath = SysConstants.ZK_LOCK_ROOT_PATH + lockPath;
         this.interProcessMutex = new InterProcessMutex(client, this.lockPath);
     }
 
