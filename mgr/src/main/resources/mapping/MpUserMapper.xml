@@ -18,6 +18,21 @@
     from mp_user
     where userno = #{userno,jdbcType=INTEGER}
   </select>
+  <select id="findMpUsersByCondition" resultType="com.czlt.reproduction.mgr.entity.MpUser" parameterType="com.czlt.reproduction.mgr.dto.MpUserDto">
+    select
+    <include refid="Base_Column_List" />
+    from mp_user
+    where 1 = 1
+    <if test="mpUserDto.username!= null">
+       and username=#{mpUserDto.username,jdbcType=VARCHAR}
+    </if>
+    <if test="mpUserDto.locked != null">
+       and locked=#{mpUserDto.locked,jdbcType.INTEGER}
+    </if>
+    order by userno asc
+    limit #{mpUserDto.start} , #{mpUserDto.size}
+
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mp_user
     where userno = #{userno,jdbcType=INTEGER}
