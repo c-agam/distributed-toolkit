@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czlt.reproduction.mgr.mapper.MpMenuMapper" >
+  <resultMap id="BaseResultMap" type="com.czlt.reproduction.mgr.entity.MpMenu" >
+    <id column="menuId" property="menuid" jdbcType="INTEGER" />
+    <result column="menuFid" property="menufid" jdbcType="INTEGER" />
+    <result column="menuName" property="menuname" jdbcType="VARCHAR" />
+    <result column="menuUrl" property="menuurl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    menuId, menuFid, menuName, menuUrl
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mp_menu
+    where menuId = #{menuid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mp_menu
+    where menuId = #{menuid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.czlt.reproduction.mgr.entity.MpMenu" >
+    insert into mp_menu (menuId, menuFid, menuName, 
+      menuUrl)
+    values (#{menuid,jdbcType=INTEGER}, #{menufid,jdbcType=INTEGER}, #{menuname,jdbcType=VARCHAR}, 
+      #{menuurl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.czlt.reproduction.mgr.entity.MpMenu" >
+    insert into mp_menu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="menuid != null" >
+        menuId,
+      </if>
+      <if test="menufid != null" >
+        menuFid,
+      </if>
+      <if test="menuname != null" >
+        menuName,
+      </if>
+      <if test="menuurl != null" >
+        menuUrl,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="menuid != null" >
+        #{menuid,jdbcType=INTEGER},
+      </if>
+      <if test="menufid != null" >
+        #{menufid,jdbcType=INTEGER},
+      </if>
+      <if test="menuname != null" >
+        #{menuname,jdbcType=VARCHAR},
+      </if>
+      <if test="menuurl != null" >
+        #{menuurl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.czlt.reproduction.mgr.entity.MpMenu" >
+    update mp_menu
+    <set >
+      <if test="menufid != null" >
+        menuFid = #{menufid,jdbcType=INTEGER},
+      </if>
+      <if test="menuname != null" >
+        menuName = #{menuname,jdbcType=VARCHAR},
+      </if>
+      <if test="menuurl != null" >
+        menuUrl = #{menuurl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where menuId = #{menuid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.czlt.reproduction.mgr.entity.MpMenu" >
+    update mp_menu
+    set menuFid = #{menufid,jdbcType=INTEGER},
+      menuName = #{menuname,jdbcType=VARCHAR},
+      menuUrl = #{menuurl,jdbcType=VARCHAR}
+    where menuId = #{menuid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -22,6 +22,7 @@ public class MgrApplicationTests {
         mpUser.setUsername("dfasfhs");
         mpUser.setPassword("fdafs");
         mpUser.setPhone("rewrw");
+        mpUser.setLocked(0);
         mpUserService.insert(mpUser);
     }
 
