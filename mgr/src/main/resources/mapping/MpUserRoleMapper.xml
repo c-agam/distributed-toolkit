@@ -15,8 +15,6 @@
     from mp_user_role
     where urId = #{urid,jdbcType=INTEGER}
   </select>
-    <select id="findMpRolesByCondition" resultType="com.czlt.reproduction.mgr.entity.MpRole"></select>
-  <select id="countByCondition" resultType="java.lang.Integer"></select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mp_user_role
     where urId = #{urid,jdbcType=INTEGER}

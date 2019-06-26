@@ -3,24 +3,22 @@
 <mapper namespace="com.czlt.reproduction.mgr.mapper.MpRoleMapper" >
   <resultMap id="BaseResultMap" type="com.czlt.reproduction.mgr.entity.MpRole" >
     <id column="roleno" property="roleno" jdbcType="INTEGER" />
-    <id column="rolename" property="rolename" jdbcType="VARCHAR" />
+    <result column="rolename" property="rolename" jdbcType="VARCHAR" />
     <result column="locked" property="locked" jdbcType="INTEGER" />
     <result column="description" property="description" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     roleno, rolename, locked, description
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.czlt.reproduction.mgr.entity.MpRoleKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from mp_role
     where roleno = #{roleno,jdbcType=INTEGER}
-      and rolename = #{rolename,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.czlt.reproduction.mgr.entity.MpRoleKey" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mp_role
     where roleno = #{roleno,jdbcType=INTEGER}
-      and rolename = #{rolename,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.czlt.reproduction.mgr.entity.MpRole" >
     insert into mp_role (roleno, rolename, locked, 
@@ -62,6 +60,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.czlt.reproduction.mgr.entity.MpRole" >
     update mp_role
     <set >
+      <if test="rolename != null" >
+        rolename = #{rolename,jdbcType=VARCHAR},
+      </if>
       <if test="locked != null" >
         locked = #{locked,jdbcType=INTEGER},
       </if>
@@ -70,13 +71,12 @@
       </if>
     </set>
     where roleno = #{roleno,jdbcType=INTEGER}
-      and rolename = #{rolename,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.czlt.reproduction.mgr.entity.MpRole" >
     update mp_role
-    set locked = #{locked,jdbcType=INTEGER},
+    set rolename = #{rolename,jdbcType=VARCHAR},
+      locked = #{locked,jdbcType=INTEGER},
       description = #{description,jdbcType=VARCHAR}
     where roleno = #{roleno,jdbcType=INTEGER}
-      and rolename = #{rolename,jdbcType=VARCHAR}
   </update>
 </mapper>

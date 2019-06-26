@@ -1,20 +1,17 @@
 package com.czlt.reproduction.mgr.mapper;
 
 import com.czlt.reproduction.mgr.entity.MpRole;
-import com.czlt.reproduction.mgr.entity.MpRoleKey;
 
 public interface MpRoleMapper {
-    int deleteByPrimaryKey(MpRoleKey key);
+    int deleteByPrimaryKey(Integer roleno);
 
     int insert(MpRole record);
 
     int insertSelective(MpRole record);
 
-    MpRole selectByPrimaryKey(MpRoleKey key);
+    MpRole selectByPrimaryKey(Integer roleno);
 
     int updateByPrimaryKeySelective(MpRole record);
 
     int updateByPrimaryKey(MpRole record);
-
-
 }
