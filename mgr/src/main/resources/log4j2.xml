@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="info">
+    <appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %level %logger{36} - %msg%n" />
+        </Console>
+        <RollingFile name="LOG-File" fileName="logs/mgr.log"
+                     filePattern="logs/mgr-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d [%t] %level %logger{36} - %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1" />
+            </Policies>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <logger name="org.springframework" level="INFO"></logger>
+        <logger name="org.mybatis" level="debug"></logger>
+        <Root level="info" includeLocation="true">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="LOG-File" />
+        </Root>
+    </loggers>
+</configuration>
