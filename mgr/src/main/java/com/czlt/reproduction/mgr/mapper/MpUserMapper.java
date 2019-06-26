@@ -20,4 +20,6 @@ public interface MpUserMapper {
     int updateByPrimaryKey(MpUser record);
 
     List<MpUser> findMpUsersByCondition(@Param("mpUserDto") MpUserDto mpUserDto);
+
+    int countByCondition(@Param("mpUserDto") MpUserDto mpUserDto);
 }
