@@ -3,24 +3,20 @@ package com.czlt.reproduction.mgr.service;
 import com.czlt.reproduction.mgr.dto.MpRoleDto;
 import com.czlt.reproduction.mgr.entity.MpRole;
 import com.czlt.reproduction.mgr.utils.PageHelper;
+import org.springframework.stereotype.Service;
 
-public interface MpRoleService {
-    /**
-     * 按条件分页查询
-     * @param mpRoleDto
-     * @return
-     */
-    PageHelper<MpRole> findMpRolePageByCondition(MpRoleDto mpRoleDto);
+@Service("mpRole")
+public class MpRoleService {
 
-    /**
-     * 新增角色
-     * @param mpRole
-     */
-    void insert(MpRole mpRole);
+    public PageHelper<MpRole> findMpRolePageByCondition(MpRoleDto mpRoleDto) {
+        return null;
+    }
 
-    /**
-     * 修改角色
-     * @param mpRole
-     */
-    void updateByPrimaryKey(MpRole mpRole);
+    public void insert(MpRole mpRole) {
+
+    }
+
+    public void updateByPrimaryKey(MpRole mpRole) {
+
+    }
 }

@@ -2,25 +2,42 @@ package com.czlt.reproduction.mgr.service;
 
 import com.czlt.reproduction.mgr.dto.MpUserDto;
 import com.czlt.reproduction.mgr.entity.MpUser;
+import com.czlt.reproduction.mgr.mapper.MpUserMapper;
 import com.czlt.reproduction.mgr.utils.PageHelper;
+import com.czlt.reproduction.mgr.utils.Route;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-public interface MpUserService {
-    /**
-     * 按条件分页查询
-     * @param mpUserDto
-     * @return
-     */
-    PageHelper<MpUser> findMpUserPageByCondition(MpUserDto mpUserDto);
+import java.util.List;
 
-    /**
-     * 新增用户
-     * @param mpUser
-     */
-    void insert(MpUser mpUser);
+@Service("mpUser")
+public class MpUserService {
+    @Autowired
+    private MpUserMapper mpUserMapper;
 
-    /**
-     * 修改用户
-     * @param mpUser
-     */
-    void updateByPrimaryKey(MpUser mpUser);
+    @Route("query")
+    public PageHelper<MpUser> findMpUserPageByCondition(MpUserDto mpUserDto) {
+        List<MpUser> mpUsers = mpUserMapper.findMpUsersByCondition(mpUserDto);
+        int count = mpUserMapper.countByCondition(mpUserDto);
+        PageHelper<MpUser> pageHelper = new PageHelper<>();
+        pageHelper.setEntries(mpUsers);
+        pageHelper.setPageSize(mpUserDto.getSize());
+        pageHelper.setPageCount(count);
+        pageHelper.setPageNumber(mpUserDto.getStart());
+        return pageHelper;
+    }
+
+    @Route("insert")
+    @Transactional
+    public void insert(MpUser mpUser) {
+        mpUserMapper.insert(mpUser);
+    }
+
+    @Route("update")
+    @Transactional
+    public void updateByPrimaryKey(MpUser mpUser) {
+        mpUserMapper.updateByPrimaryKey(mpUser);
+    }
+
 }
