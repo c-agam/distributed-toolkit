@@ -42,7 +42,7 @@ public class PermissionFilter implements Filter {
         if (StringUtils.isNotBlank(securityToken)) {
             String securityTokenKey = ApiConstants.TOKEN_CACHE + securityToken;
             if (sessionManager.exist(securityTokenKey)) {
-                ISession isession = (ISession) sessionManager.get(securityTokenKey);
+                ISession isession = sessionManager.get(securityTokenKey);
                 long currentTime = System.currentTimeMillis();
                 if (currentTime - isession.getCreateTime() > ApiConstants.LOGIN_EXPIRE_TIME) {
                     //登陆过期
