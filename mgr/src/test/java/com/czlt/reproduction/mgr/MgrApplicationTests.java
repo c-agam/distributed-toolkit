@@ -1,5 +1,6 @@
 package com.czlt.reproduction.mgr;
 
+import com.czlt.reproduction.mgr.entity.MpUser;
 import com.czlt.reproduction.mgr.service.MpUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +19,7 @@ public class MgrApplicationTests {
     @Test
     public void contextLoads() {
         MpUser mpUser = new MpUser();
+        mpUser.setAccount("fdafsda");
         mpUser.setUsername("dfasfhs");
         mpUser.setPassword("fdafs");
         mpUser.setPhone("rewrw");

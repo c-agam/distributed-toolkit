@@ -19,6 +19,12 @@
     from mp_login
     where loginId = #{loginid,jdbcType=INTEGER}
   </select>
+  <select id="selectByToken" resultType="com.czlt.reproduction.mgr.entity.MpLogin">
+    select
+    <include refid="Base_Column_List" />
+    from mp_login
+    where token = #{token,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mp_login
     where loginId = #{loginid,jdbcType=INTEGER}

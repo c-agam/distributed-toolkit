@@ -11,6 +11,8 @@ public interface MpLoginMapper {
 
     MpLogin selectByPrimaryKey(Integer loginid);
 
+    MpLogin selectByToken(String token);
+
     int updateByPrimaryKeySelective(MpLogin record);
 
     int updateByPrimaryKey(MpLogin record);

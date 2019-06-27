@@ -1,38 +1,88 @@
-2019-06-27 22:58:05,727 [main] INFO com.czlt.reproduction.mgr.MgrApplication - Starting MgrApplication on zul-pc with PID 5504 (D:\IdeaProjects\mgr\target\classes started by zul in D:\IdeaProjects\mgr)
-2019-06-27 22:58:05,750 [main] INFO com.czlt.reproduction.mgr.MgrApplication - The following profiles are active: local
-2019-06-27 22:58:06,550 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpMenuMapper.class]
-2019-06-27 22:58:06,551 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpRoleMapper.class]
-2019-06-27 22:58:06,551 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpRoleMenuMapper.class]
-2019-06-27 22:58:06,551 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpUserMapper.class]
-2019-06-27 22:58:06,552 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpUserRoleMapper.class]
-2019-06-27 22:58:06,553 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpMenuMapper' and 'com.czlt.reproduction.mgr.mapper.MpMenuMapper' mapperInterface
-2019-06-27 22:58:06,555 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpMenuMapper'.
-2019-06-27 22:58:06,555 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpRoleMapper' and 'com.czlt.reproduction.mgr.mapper.MpRoleMapper' mapperInterface
-2019-06-27 22:58:06,555 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpRoleMapper'.
-2019-06-27 22:58:06,556 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpRoleMenuMapper' and 'com.czlt.reproduction.mgr.mapper.MpRoleMenuMapper' mapperInterface
-2019-06-27 22:58:06,556 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpRoleMenuMapper'.
-2019-06-27 22:58:06,556 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpUserMapper' and 'com.czlt.reproduction.mgr.mapper.MpUserMapper' mapperInterface
-2019-06-27 22:58:06,556 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpUserMapper'.
-2019-06-27 22:58:06,556 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpUserRoleMapper' and 'com.czlt.reproduction.mgr.mapper.MpUserRoleMapper' mapperInterface
-2019-06-27 22:58:06,556 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpUserRoleMapper'.
-2019-06-27 22:58:07,203 [main] INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bb3e439c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-06-27 22:58:07,596 [main] INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-06-27 22:58:07,618 [main] INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2019-06-27 22:58:07,633 [main] INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2019-06-27 22:58:07,634 [main] INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-06-27 22:58:07,815 [main] INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/mgr] - Initializing Spring embedded WebApplicationContext
-2019-06-27 22:58:07,816 [main] INFO org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1971 ms
-2019-06-27 22:58:07,947 [main] INFO com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
-2019-06-27 22:58:08,097 [main] INFO com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-2019-06-27 22:58:08,501 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpMenuMapper.xml]'
-2019-06-27 22:58:08,526 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpRoleMapper.xml]'
-2019-06-27 22:58:08,545 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpRoleMenuMapper.xml]'
-2019-06-27 22:58:08,569 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpUserMapper.xml]'
-2019-06-27 22:58:08,597 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpUserRoleMapper.xml]'
-2019-06-27 22:58:08,989 [main] INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-06-27 22:58:09,352 [main] INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2019-06-27 22:58:09,388 [main] INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/mgr'
-2019-06-27 22:58:09,394 [main] INFO com.czlt.reproduction.mgr.MgrApplication - Started MgrApplication in 5.159 seconds (JVM running for 7.292)
-2019-06-27 22:59:29,566 [Thread-12] INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2019-06-27 22:59:29,569 [Thread-12] INFO com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
-2019-06-27 22:59:29,571 [Thread-12] INFO com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2019-06-27 23:37:38,066 [main] INFO com.czlt.reproduction.mgr.MgrApplication - Starting MgrApplication on zul-pc with PID 9716 (D:\IdeaProjects\mgr\target\classes started by zul in D:\IdeaProjects\mgr)
+2019-06-27 23:37:38,093 [main] INFO com.czlt.reproduction.mgr.MgrApplication - The following profiles are active: local
+2019-06-27 23:37:38,874 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpLoginMapper.class]
+2019-06-27 23:37:38,874 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpMenuMapper.class]
+2019-06-27 23:37:38,874 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpRoleMapper.class]
+2019-06-27 23:37:38,875 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpRoleMenuMapper.class]
+2019-06-27 23:37:38,875 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpUserMapper.class]
+2019-06-27 23:37:38,875 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\IdeaProjects\mgr\target\classes\com\czlt\reproduction\mgr\mapper\MpUserRoleMapper.class]
+2019-06-27 23:37:38,876 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpLoginMapper' and 'com.czlt.reproduction.mgr.mapper.MpLoginMapper' mapperInterface
+2019-06-27 23:37:38,878 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpLoginMapper'.
+2019-06-27 23:37:38,879 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpMenuMapper' and 'com.czlt.reproduction.mgr.mapper.MpMenuMapper' mapperInterface
+2019-06-27 23:37:38,879 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpMenuMapper'.
+2019-06-27 23:37:38,879 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpRoleMapper' and 'com.czlt.reproduction.mgr.mapper.MpRoleMapper' mapperInterface
+2019-06-27 23:37:38,879 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpRoleMapper'.
+2019-06-27 23:37:38,879 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpRoleMenuMapper' and 'com.czlt.reproduction.mgr.mapper.MpRoleMenuMapper' mapperInterface
+2019-06-27 23:37:38,879 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpRoleMenuMapper'.
+2019-06-27 23:37:38,879 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpUserMapper' and 'com.czlt.reproduction.mgr.mapper.MpUserMapper' mapperInterface
+2019-06-27 23:37:38,880 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpUserMapper'.
+2019-06-27 23:37:38,880 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'mpUserRoleMapper' and 'com.czlt.reproduction.mgr.mapper.MpUserRoleMapper' mapperInterface
+2019-06-27 23:37:38,880 [main] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'mpUserRoleMapper'.
+2019-06-27 23:37:39,519 [main] INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ea3198d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-27 23:37:39,943 [main] INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-06-27 23:37:39,966 [main] INFO org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-06-27 23:37:39,979 [main] INFO org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-06-27 23:37:39,980 [main] INFO org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-06-27 23:37:40,134 [main] INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/mgr] - Initializing Spring embedded WebApplicationContext
+2019-06-27 23:37:40,134 [main] INFO org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1964 ms
+2019-06-27 23:37:40,280 [main] INFO com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+2019-06-27 23:37:40,496 [main] INFO com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2019-06-27 23:37:40,895 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpLoginMapper.xml]'
+2019-06-27 23:37:40,919 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpMenuMapper.xml]'
+2019-06-27 23:37:40,944 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpRoleMapper.xml]'
+2019-06-27 23:37:40,965 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpRoleMenuMapper.xml]'
+2019-06-27 23:37:40,988 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpUserMapper.xml]'
+2019-06-27 23:37:41,004 [main] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [D:\IdeaProjects\mgr\target\classes\mapping\MpUserRoleMapper.xml]'
+2019-06-27 23:37:41,308 [main] INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-27 23:37:41,777 [main] INFO org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-06-27 23:37:41,830 [main] INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/mgr'
+2019-06-27 23:37:41,841 [main] INFO com.czlt.reproduction.mgr.MgrApplication - Started MgrApplication in 4.795 seconds (JVM running for 6.739)
+2019-06-27 23:37:55,139 [http-nio-8080-exec-1] INFO com.czlt.reproduction.mgr.utils.Logging - 1561649874643jclha|RSP|{"errorCode":"9999"}
+2019-06-27 23:37:55,144 [http-nio-8080-exec-1] ERROR com.czlt.reproduction.mgr.utils.Logging - 1561649874643jclha|null
+java.lang.NullPointerException: null
+	at com.czlt.reproduction.mgr.servlet.ApiServlet.doPost(ApiServlet.java:20) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.czlt.reproduction.mgr.filter.SystemFilter.doFilter(SystemFilter.java:30) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.czlt.reproduction.mgr.filter.PermissionFilter.doFilter(PermissionFilter.java:72) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_211]

@@ -1,7 +1,8 @@
 package com.czlt.reproduction.mgr.filter;
 import com.czlt.reproduction.mgr.cache.ISession;
 import com.czlt.reproduction.mgr.cache.SessionManager;
-import com.czlt.reproduction.mgr.service.LoginService;
+import com.czlt.reproduction.mgr.entity.MpLogin;
+import com.czlt.reproduction.mgr.service.MpLoginService;
 import com.czlt.reproduction.mgr.utils.ApiConstants;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.io.IOException;
 public class PermissionFilter implements Filter {
 
     @Autowired
-    private LoginService loginService;
+    private MpLoginService mpLoginService;
 
     @Autowired
     private SessionManager sessionManager;
@@ -51,22 +52,22 @@ public class PermissionFilter implements Filter {
                     isession.setCreateTime(currentTime);
                 }
             } else {
-//                Login login = loginService.getLoginInfoByToken(securityToken);
-//                if (login != null) {
-//                    if(System.currentTimeMillis() - login.getLogintime().getTime() >= ApiConstants.LOGIN_EXPIRE_TIME){
-//                        rep.setStatus(401);
-//                        return;
-//                    }else{
-//                        ISession iSession = new ISession();
-//                        iSession.setAccount(login.getAccount());
-//                        iSession.setUsername(login.getUsername());
-//                        iSession.setToken(login.getToken());
-//                        iSession.setCreateTime(System.currentTimeMillis());
-//                        iSession.setUserId(login.getUserid());
-//                        iSession.setExpireTime(ApiConstants.TOKEN_EXPIRE_TIME);
-//                        clientCacheManager.set(securityTokenKey, iSession);
-//                    }
-//                }
+                MpLogin login = mpLoginService.getLoginInfoByToken(securityToken);
+                if (login != null) {
+                    if(System.currentTimeMillis() - login.getLogintime().getTime() >= ApiConstants.LOGIN_EXPIRE_TIME){
+                        rep.setStatus(401);
+                        return;
+                    }else{
+                        ISession iSession = new ISession();
+                        iSession.setAccount(login.getAccount());
+                        iSession.setUsername(login.getUsername());
+                        iSession.setToken(login.getToken());
+                        iSession.setCreateTime(System.currentTimeMillis());
+                        iSession.setUserId(login.getUserid());
+                        iSession.setExpireTime(ApiConstants.TOKEN_EXPIRE_TIME);
+                        sessionManager.set(securityTokenKey, iSession);
+                    }
+                }
             }
         }
         chain.doFilter(req, rep);

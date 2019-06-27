@@ -15,7 +15,7 @@ public class ISession {
     /**
      * 用户编号
      */
-    private String userId;
+    private Integer userId;
     /**
      * 用户名
      */
