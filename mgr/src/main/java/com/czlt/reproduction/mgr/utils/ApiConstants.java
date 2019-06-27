@@ -15,5 +15,7 @@ public final class ApiConstants {
     public final static String MASTER_BRANCH = "master";
     // AES
     public static final String AES_KEY = "m&8!L&(i$+%^@~*?";
+    // 登陆过期时间
+    public static final long LOGIN_EXPIRE_TIME = 4 * 60 * 60 * 1000;
 }
 

@@ -7,6 +7,8 @@ public class MpUser {
 
     private String username;
 
+    private String account;
+
     private String password;
 
     private String phone;
@@ -29,6 +31,14 @@ public class MpUser {
 
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account == null ? null : account.trim();
     }
 
     public String getPassword() {

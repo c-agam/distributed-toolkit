@@ -4,13 +4,14 @@
   <resultMap id="BaseResultMap" type="com.czlt.reproduction.mgr.entity.MpUser" >
     <id column="userno" property="userno" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="register_time" property="registerTime" jdbcType="TIMESTAMP" />
     <result column="locked" property="locked" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    userno, username, password, phone, register_time, locked
+    userno, username, account, password, phone, register_time, locked
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -23,11 +24,14 @@
     <include refid="Base_Column_List" />
     from mp_user
     where 1 = 1
+    <if test="mpUserDto.account != null">
+      and account=#{mpUserDto.account,jdbcType=VARCHAR}
+    </if>
     <if test="mpUserDto.username!= null">
-       and username=#{mpUserDto.username,jdbcType=VARCHAR}
+      and username=#{mpUserDto.username,jdbcType=VARCHAR}
     </if>
     <if test="mpUserDto.locked != null">
-       and locked=#{mpUserDto.locked,jdbcType.INTEGER}
+      and locked=#{mpUserDto.locked,jdbcType.INTEGER}
     </if>
     order by userno asc
     limit #{mpUserDto.start} , #{mpUserDto.size}
@@ -35,9 +39,11 @@
   </select>
   <select id="countByCondition" resultType="java.lang.Integer">
     select count(userno)
-    <include refid="Base_Column_List" />
     from mp_user
     where 1 = 1
+    <if test="mpUserDto.account != null">
+      and account=#{mpUserDto.account,jdbcType=VARCHAR}
+    </if>
     <if test="mpUserDto.username!= null">
       and username=#{mpUserDto.username,jdbcType=VARCHAR}
     </if>
@@ -50,10 +56,12 @@
     where userno = #{userno,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.czlt.reproduction.mgr.entity.MpUser" >
-    insert into mp_user (username, password, phone, locked)
-    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
-      #{phone,jdbcType=VARCHAR}, #{locked,jdbcType=INTEGER}
-      )
+    insert into mp_user (userno, username, account, 
+      password, phone, register_time, 
+      locked)
+    values (#{userno,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{account,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{registerTime,jdbcType=TIMESTAMP}, 
+      #{locked,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.czlt.reproduction.mgr.entity.MpUser" >
     insert into mp_user
@@ -63,6 +71,9 @@
       </if>
       <if test="username != null" >
         username,
+      </if>
+      <if test="account != null" >
+        account,
       </if>
       <if test="password != null" >
         password,
@@ -84,6 +95,9 @@
       <if test="username != null" >
         #{username,jdbcType=VARCHAR},
       </if>
+      <if test="account != null" >
+        #{account,jdbcType=VARCHAR},
+      </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
@@ -104,6 +118,9 @@
       <if test="username != null" >
         username = #{username,jdbcType=VARCHAR},
       </if>
+      <if test="account != null" >
+        account = #{account,jdbcType=VARCHAR},
+      </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
@@ -122,6 +139,7 @@
   <update id="updateByPrimaryKey" parameterType="com.czlt.reproduction.mgr.entity.MpUser" >
     update mp_user
     set username = #{username,jdbcType=VARCHAR},
+      account = #{account,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       register_time = #{registerTime,jdbcType=TIMESTAMP},

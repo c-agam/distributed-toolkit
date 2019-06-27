@@ -22,4 +22,5 @@ public interface MpUserMapper {
     List<MpUser> findMpUsersByCondition(@Param("mpUserDto") MpUserDto mpUserDto);
 
     int countByCondition(@Param("mpUserDto") MpUserDto mpUserDto);
+
 }

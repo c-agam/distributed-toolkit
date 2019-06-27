@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 
 public class ApiServlet extends HttpServlet {
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try {
